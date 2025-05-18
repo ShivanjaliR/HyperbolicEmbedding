@@ -1,0 +1,68 @@
+sign_bitcoin_output_file = "../output/node2vec/bitcoin_output.txt"
+
+sign_bitcoin_original_graph_pickel_file = "../output/node2vec/sign_bitcoin_original_graph_pickel_file.pkl"
+sign_bitcoin_tripartite_graph_pickel_file = "./output/node2vec/sign_bitcoin_tripartite_graph_pickel_file.pkl"
+sign_bitcoin_tripartite_middle_dimension_pkl = "./output/node2vec/sign_bitcoin_tripartite_middle_dimension.pkl"
+sign_bitcoin_node2vec_pkl = "./output/node2vec/sign_bitcoin_node2vec.pkl"
+sign_bitcoin_isomap_pkl = "./output/isomap/sign_bitcoin_isomap.pkl"
+sign_bitcoin_hope_pkl = "./output/hope/sign_bitcoin_hope.pkl"
+sign_bitcoin_poincare_pkl = "./output/poincare/sign_bitcoin_poincare_pkl.pkl"
+sign_bitcoin_2D_poincare_pkl = "./output/poincare/sign_bitcoin_2D_poincare_pkl.pkl"
+sign_bitcoin_2D_poincare_label_pkl = "./output/poincare/sign_bitcoin_2D_poincare_label_pkl.pkl"
+sign_bitcoin_2D_poincare_node_colors_pkl = "./output/poincare/sign_bitcoin_2D_poincare_node_colors_pkl.pkl"
+sign_bitcoin_2D_poincare_spectral_clustering_pickel = "./output/poincare/sign_bitcoin_2D_poincare_spectral_clustering_pickel.pkl"
+sign_bitcoin_2D_poincare_spectral_colors_pickel = "./output/poincare/sign_bitcoin_2D_poincare_spectral_colors_pickel.pkl"
+sign_bitcoin_2D_poincare_spectral_clustering_precomputed_pickel = "./output/poincare/sign_bitcoin_2D_poincare_spectral_clustering_precomputed_pickel.pkl"
+sign_bitcoin_2D_poincare_spectral_colors_precomputed_pickel = "./output/poincare/sign_bitcoin_2D_poincare_spectral_colors_precomputed_pickel.pkl"
+sign_bitcoin_2D_poincare_spectral_clustering_precomputed_graph_based_pickel = "./output/poincare/sign_bitcoin_2D_poincare_spectral_clustering_precomputed_graph_based_pickel.pkl"
+sign_bitcoin_2D_poincare_spectral_colors_precomputed_graph_based_pickel = "./output/poincare/sign_bitcoin_2D_poincare_spectral_colors_precomputed_graph_based_pickel.pkl"
+sign_bitcoin_2D_poincare_DBSCAN_pickel = "./output/poincare/sign_bitcoin_2D_poincare_DBSCAN_pickel.pkl"
+sign_bitcoin_2D_poincare_DBSCAN_colors_pickel = "./output/poincare/sign_bitcoin_2D_poincare_DBSCAN_colors_pickel.pkl"
+
+
+inputfile = "./resource/soc-sign-bitcoinalpha.csv"
+
+sign_bitcoin_positive_rating_bitcoin_node_embedding ="./output/node2vec/sign_bitcoin_positive_rating_bitcoin_node_embedding.png"
+sign_bitcoin_negative_rating_bitcoin_node_embedding = "./output/node2vec/sign_bitcoin_negative_rating_bitcoin_node_embedding.png"
+sign_bitcoin_source_node_bitcoin_node_embedding = "./output/node2vec/sign_bitcoin_source_node_bitcoin_node_embedding.png"
+sign_bitcoin_TSNE_tripartite_node_embedding_scatter_plot = "./output/node2vec/sign_bitcoin_TSNE_tripartite_node_embedding_scatter_with_normal_nodes.png"
+sign_bitcoin_tripartite_graph_name = "./output/node2vec/sign_bitcoin_tripartite_graph_network.png"
+sign_bitcoin_node2vec = "./output/node2vec/sign_bitcoin_node2vec.png"
+
+sign_bitcoin_isomap = "./output/isomap_1/sign_bitcoin_isomap.png"
+sign_bitcoin_positive_rating_isomap ="./output/isomap_1/sign_bitcoin_positive_rating_isomap.png"
+sign_bitcoin_negative_rating_isomap = "./output/isomap_1/sign_bitcoin_negative_rating_isomap.png"
+sign_bitcoin_source_node_isomap = "./output/isomap_1/sign_bitcoin_source_node_isomap.png"
+sign_bitcoin_isomap_2D = "./output/isomap_1/sign_bitcoin_isomap_2D.png"
+
+sign_bitcoin_hope_2D = "./output/hope_1/sign_bitcoin_hope_2D.png"
+sign_bitcoin_hope = "./output/hope_1/sign_bitcoin_hope.png"
+sign_bitcoin_positive_rating_hope ="./output/hope_1/sign_bitcoin_positive_rating_hope.png"
+sign_bitcoin_negative_rating_hope = "./output/hope_1/sign_bitcoin_negative_rating_hope.png"
+sign_bitcoin_source_node_hope = "./output/hope_1/sign_bitcoin_source_node_hope.png"
+sign_bitcoin_hope_2D = "./output/hope_1/sign_bitcoin_hope_2D.png"
+
+
+sign_bitcoin_TSNE_tripartite_node_embedding_title = "Bitcoin Tripartite Node Embedding using TSNE"
+sign_bitcoin_tripartite_graph_title = 'Sign Bitcoin Tripatite Graph'
+sign_bitcoin_isomap_title = "Bitcoin Tripartite Node Embedding using ISOMAP"
+sign_bitcoin_hope_title = "Bitcoin Tripartite Node Embedding using HOPE"
+
+sign_bitcoin_poincare = "./output/poincare/sign_bitcoin_poincare.png"
+sign_bitcoin_poincare_title = "Bitcoin Tripartite Node Embedding using Poincare"
+sign_bitcoin_poincare = "./output/poincare/sign_bitcoin_poincare.png"
+sign_bitcoin_positive_rating_poincare ="./output/poincare/sign_bitcoin_positive_rating_poincare.png"
+sign_bitcoin_negative_rating_poincare = "./output/poincare/sign_bitcoin_negative_rating_poincare.png"
+sign_bitcoin_source_node_poincare = "./output/poincare/sign_bitcoin_source_node_poincare.png"
+sign_bitcoin_poincare_1 ="./output/poincare/sign_bitcoin_poincare_1.png"
+sign_bitcoin_poincare_2 = "./output/poincare/sign_bitcoin_poincare_2.png"
+sign_bitcoin_poincare_2D_Visualization = "./output/poincare/sign_bitcoin_poincare_2D_Visualization.png"
+sign_bitcoin_poincare_soucre_2D_Visualization = "./output/poincare/sign_bitcoin_poincare_soucre_2D_Visualization.png"
+sign_bitcoin_poincare_positive_target_2D_Visualization = "./output/poincare/sign_bitcoin_poincare_positive_target_2D_Visualization.png"
+sign_bitcoin_poincare_negative_target_2D_Visualization = "./output/poincare/sign_bitcoin_poincare_negative_target_2D_Visualization.png"
+sign_bitcoin_poincare_2D_spectral_Visualization = "./output/poincare/sign_bitcoin_poincare_2D_spectral_Visualization.png"
+sign_bitcoin_poincare_2D_spectral_precomputed_Visualization = "./output/poincare/sign_bitcoin_poincare_2D_spectral_precomputed_Visualization.png"
+sign_bitcoin_poincare_2D_spectral_precomputed_graph_based_Visualization = "./output/poincare/sign_bitcoin_poincare_2D_spectral_precomputed_graph_based_Visualization.png"
+sign_bitcoin_poincare_2D_DBSCAN_Visualization = "./output/poincare/sign_bitcoin_poincare_2D_DBSCAN_Visualization.png"
+
+no_of_clusters = 25

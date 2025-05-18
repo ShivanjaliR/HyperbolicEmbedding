@@ -399,8 +399,8 @@ def hope_display(hope_embedding, G):
     # plt.show()
 
 def poincareEmbedding1(G):
-    '''edges = pd.DataFrame(G.edges()).to_csv("edges.csv", index=False)
-    relations = pd.read_csv("edges.csv")
+    '''edges = pd.DataFrame(G.edges()).to_csv("bitcoin_edges.csv", index=False)
+    relations = pd.read_csv("bitcoin_edges.csv")
     relations = PoincareRelations(relations.iloc[:, :2])
     model = PoincareModel(relations, negative=1)
     model.train(epochs=50)'''
@@ -546,8 +546,8 @@ def poincareEmbedding(G):
     if exists(sign_bitcoin_poincare_pkl):
         model = read_pickel(sign_bitcoin_poincare_pkl)
     else:
-        edges = pd.DataFrame(G.edges()).to_csv("edges.csv", index=False)
-        relations_csv = pd.read_csv("edges.csv")
+        edges = pd.DataFrame(G.edges()).to_csv("bitcoin_edges.csv", index=False)
+        relations_csv = pd.read_csv("bitcoin_edges.csv")
         #relations = PoincareRelations(relations_csv.iloc[:, :2])
         relations = [tuple(x) for x in relations_csv.iloc[:, :2].values.tolist()]
         model = PoincareModel(relations, negative=1)

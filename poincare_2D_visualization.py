@@ -328,7 +328,7 @@ def DBSCAN_Clustering(embedding_vectors, pairs):
 
 bitocin_tripartite = read_pickel(sign_bitcoin_tripartite_graph_pickel_file)
 
-relation_csv = pd.read_csv("edges.csv")
+relation_csv = pd.read_csv("bitcoin_edges.csv")
 relations = [tuple(x) for x in relation_csv.iloc[:,:2].values.tolist()]
 
 if exists(sign_bitcoin_2D_poincare_pkl) == False and exists(sign_bitcoin_2D_poincare_node_colors_pkl) == False and exists(sign_bitcoin_2D_poincare_label_pkl) == False:
@@ -348,7 +348,24 @@ if exists(sign_bitcoin_2D_poincare_spectral_clustering_pickel) == False:
 
 #bitcoin_spectral_graph_based(A, relations)
 
-DBSCAN_Clustering(np.array(middleDimentions.kv.vectors), relations)
+#DBSCAN_Clustering(np.array(middleDimentions.kv.vectors), relations)
+
+model = read_pickel(sign_bitcoin_2D_poincare_pkl)
+labels = list(model.kv.index2word)
+
+source_nodes =  []
+positive_nodes = []
+negative_nodes = []
+for i in range(len(labels)):
+    if labels[i].startswith("N"):
+        negative_nodes.append(np.array(middleDimentions.kv.vectors)[i])
+    elif labels[i].startswith("S"):
+        source_nodes.append(np.array(middleDimentions.kv.vectors)[i])
+    elif labels[i].startswith("P"):
+        positive_nodes.append(np.array(middleDimentions.kv.vectors)[i])
+
+DBSCAN_Clustering(source_nodes, relations)
+
 
 
 
