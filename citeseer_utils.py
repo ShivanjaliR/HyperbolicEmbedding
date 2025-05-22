@@ -5,6 +5,9 @@ import matplotlib.pyplot as plt
 from sklearn.cluster import SpectralClustering, DBSCAN, KMeans
 from sklearn.manifold import TSNE
 import copy
+
+from sklearn.neighbors import NearestNeighbors
+
 from resource.citeseer_citation_constants import citeseer_hub_plot_name, citeseer_authority_plot_name, \
     citeseer_clusters_list_pkl, min_samples, citeseer_spectral_dbscan_plot_name, citeseer_dbscan_cluster_csv_file, \
     citeseer_hit_authority_score_csv, citeseer_cust_dbscan_cluster_csv_file, citeseer_5th_nearest_neighbor_distance_csv, \
@@ -26,10 +29,53 @@ from resource.citeseer_citation_constants import citeseer_hub_plot_name, citesee
     source_citeseer_node_degree_summary, citeseer_dbscan_cluster_node_edge_csv_file, \
     citeseer_pair_removed_cust_dbscan_cluster_csv_file, citeseer_dbscan_cluster_node_edge_pkl, \
     citeseer_nodes_not_in_cluster_csv, citeseer_nodes_not_part_of_any_community
-from utils import save_as_pickle, read_pickel, average_distance, key_func
+from utils import save_as_pickle, read_pickel, key_func
 import pandas as pd
 import matplotlib
+from sklearn.neighbors import NearestNeighbors
 matplotlib.use("TkAgg")
+
+def average_distance(source_nodes, cluster_no, sign_positive_target_avg_distance_plot_name):
+    nodes = source_nodes['nodes']
+    names = source_nodes['name']
+    avg = 0
+    fifth_nodes_distances = []
+    fitth_nodes_name = []
+    avg_distances = []
+    name_list = []
+    if len(nodes) > 0:
+        K_values = range(len(nodes))
+        for i in range(len(nodes)):
+            node = np.array(nodes[i]).reshape(1, -1)
+            if len(nodes) < 5:
+                avg_degree = 5
+                nn = NearestNeighbors(n_neighbors=len(nodes), algorithm='auto', metric='euclidean')
+            else:
+                avg_degree = 5
+                nn = NearestNeighbors(n_neighbors=avg_degree, algorithm='auto', metric='euclidean')
+            nn.fit(nodes)
+            distances, indices = nn.kneighbors(node)
+            #fifth_nodes_distances.append(distances[0][7])
+            #fitth_nodes_name.append(names[indices[0][7]])
+            avg += np.average(distances)
+            avg_distances.append(np.average(distances))
+            name_list.append(names[i])
+
+        avg_distances_sort = np.sort(avg_distances, axis=0)[::-1]
+        figure12 = plt.figure(figsize=(15, 15))
+        ax12 = figure12.add_subplot(111)
+        ax12.plot(K_values, avg_distances_sort)
+        plt.legend()
+        for h in range(len(avg_distances_sort)):
+            if avg/len(nodes) > avg_distances_sort[h]:
+                break
+        plt.scatter(h-1, avg/len(nodes), c='red', marker='x', label='Average Distnace Of Cluster Point')
+        plt.title("Average Distance Of Eight Neighbors For Every Node " + str(cluster_no))
+        plt.savefig(sign_positive_target_avg_distance_plot_name + str(cluster_no) +".png")
+        ep = avg/len(nodes)
+    else:
+        ep = 0
+    return ep, np.average(fifth_nodes_distances)
 
 def get_customized_clusters(cust_dbscan_cluster_nodes, middleDimentions, bitcoin_directed_A, closer):
     for p in range(len(cust_dbscan_cluster_nodes)):
